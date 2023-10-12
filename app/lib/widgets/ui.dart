@@ -115,6 +115,7 @@ Widget customText({
 
 Widget customLogos(){
   return  Row(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Flexible(
         child: SvgPicture.asset('assets/google.svg',height: 60,width: 60),

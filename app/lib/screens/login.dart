@@ -2,6 +2,7 @@ import 'package:app/utils/customTheme.dart';
 import 'package:app/widgets/appBar.dart';
 import 'package:app/widgets/ui.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class Login extends StatefulWidget {
@@ -69,8 +70,8 @@ class _LoginState extends State<Login> {
 
                  Row(
                    children: [
-                     const Expanded(child:
-                     Padding(
+                     const Expanded(
+                       child: Padding(
                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                        child: Row(
                          children: [
@@ -88,12 +89,20 @@ class _LoginState extends State<Login> {
 
                  const SizedBox(height: 20),
                  inputButton(width: wd *0.90, height: ht * 0.07, text: 'Log In', onPressed: null),
+                 const SizedBox(height: 20),
+                 customLogos(),
+                 const SizedBox(height: 20),
 
-                 Padding(
-                     padding:const EdgeInsets.fromLTRB(100.0, 20, 0, 0),
-                     child: customLogos(),
-                 ),
-
+                GestureDetector(
+                  onTap: () => Get.toNamed('/register'),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      customText(txt: "Don't have an Account? ", fw: FontWeight.w400, fs: 15, cl: secondaryDark),
+                      customText(txt: "Create Account", fw: FontWeight.w400, fs: 15, cl: primaryBlue),
+                    ],
+                  ),
+                ),
                ],
              ),
            ),
